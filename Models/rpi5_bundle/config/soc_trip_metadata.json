@@ -1,0 +1,113 @@
+{
+  "model": "soc_trip_v2",
+  "trained_at": "2026-03-26T18:02:24.009782",
+  "features": [
+    "soc_per_km_capacity",
+    "direction_encoded",
+    "speed_distance_interaction",
+    "route_distance_km",
+    "departure_station_encoded",
+    "wave_component_along_route",
+    "target_speed",
+    "hop_count",
+    "arrival_station_encoded",
+    "energy_rate_proxy",
+    "start_soc",
+    "hour_of_day",
+    "tide_height_m",
+    "wave_height_m",
+    "current_component_along_route",
+    "passengers_on_board"
+  ],
+  "target": "soc_delta",
+  "best_params": {
+    "max_depth": 9,
+    "learning_rate": 0.25149250310819987,
+    "subsample": 0.5387916254888159,
+    "colsample_bytree": 0.7402892593658529,
+    "colsample_bylevel": 0.7660266463210016,
+    "min_child_weight": 16,
+    "reg_alpha": 0.013309030287686149,
+    "reg_lambda": 0.07875105738603007,
+    "gamma": 0.5396759265145143,
+    "n_estimators": 2783
+  },
+  "monotonic_constraints": {
+    "soc_per_km_capacity": 0,
+    "direction_encoded": 0,
+    "speed_distance_interaction": 1,
+    "route_distance_km": 1,
+    "departure_station_encoded": 0,
+    "wave_component_along_route": 0,
+    "target_speed": 0,
+    "hop_count": 1,
+    "arrival_station_encoded": 0,
+    "energy_rate_proxy": 1,
+    "start_soc": 0,
+    "hour_of_day": 0,
+    "tide_height_m": 0,
+    "wave_height_m": 0,
+    "current_component_along_route": -1,
+    "passengers_on_board": 0
+  },
+  "use_log_transform": false,
+  "use_huber_loss": false,
+  "huber_slope": null,
+  "n_ensemble_seeds": 5,
+  "ensemble_seeds": [
+    42,
+    137,
+    256,
+    512,
+    1024
+  ],
+  "augmentation_applied": true,
+  "data_augmentation_factor": 5.0,
+  "splits": {
+    "train": 702,
+    "train_augmented": 3510,
+    "val": 125,
+    "test": 271
+  },
+  "metrics": {
+    "Train": {
+      "MAE": 0.18788114190101624,
+      "RMSE": 0.25194889626909445,
+      "R2": 0.9980332851409912,
+      "MAPE": "4.3994856"
+    },
+    "Validation": {
+      "MAE": 0.7957362532615662,
+      "RMSE": 1.071214894150169,
+      "R2": 0.9380251169204712,
+      "MAPE": "25.371525"
+    },
+    "Test": {
+      "MAE": 0.9593494534492493,
+      "RMSE": 1.239435470267769,
+      "R2": 0.9242748618125916,
+      "MAPE": "16.460003"
+    }
+  },
+  "quantile": {
+    "q10": {
+      "alpha": 0.1,
+      "test_mean": 6.477257251739502,
+      "n_trees": 245
+    },
+    "q90": {
+      "alpha": 0.9,
+      "test_mean": 7.717953681945801,
+      "n_trees": 544
+    },
+    "test_coverage_80": 0.46863468634686345,
+    "avg_interval_width": 1.2406961917877197,
+    "ordering_valid": false
+  },
+  "conformal": {
+    "conformal_q_hat_80": 1.2659401893615723,
+    "alpha": 0.2,
+    "val_n": 125,
+    "test_coverage": 0.8228782287822878
+  }
+}

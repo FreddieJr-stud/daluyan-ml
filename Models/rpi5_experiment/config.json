@@ -1,0 +1,10 @@
+{
+  "interface": "wlan1",
+  "epoch_seconds": 120,
+  "correction_factor": 0.8,
+  "min_rssi": -80,
+  "dbscan_eps": 0.3,
+  "dbscan_min_samples": 2,
+  "output_file": "passenger_count.json",
+  "crew_macs": []
+}

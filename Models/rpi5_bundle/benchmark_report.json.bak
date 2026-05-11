@@ -1,0 +1,185 @@
+{
+  "timestamp": "2026-03-13T19:21:53.082897",
+  "platform": {
+    "machine": "AMD64",
+    "system": "Windows",
+    "release": "11",
+    "python": "3.12.10",
+    "xgboost": "3.1.2",
+    "numpy": "2.3.3"
+  },
+  "models": {
+    "1A": {
+      "metrics": {
+        "MAE": 0.791780948638916,
+        "RMSE": 1.066307783126831,
+        "R2": 0.94727502454906,
+        "MAPE": 25.324052810668945
+      },
+      "expected": {
+        "MAE": 0.7918,
+        "RMSE": 1.0663,
+        "R2": 0.9473,
+        "n": 190
+      }
+    },
+    "1B": {
+      "metrics": {
+        "MAE": 0.41106393933296204,
+        "RMSE": 0.5949144959449768,
+        "R2": 0.9746385033529199,
+        "MAPE": 16.78396987915039
+      },
+      "expected": {
+        "MAE": 0.4111,
+        "RMSE": 0.5949,
+        "R2": 0.9746,
+        "n": 10351
+      }
+    },
+    "2": {
+      "fpr": 1.3334414136910793,
+      "detection_rate": 98.2
+    },
+    "3a": {
+      "score_normal": 0.6103688721443494,
+      "score_injected": 96.22783457473138,
+      "detected": true
+    },
+    "3b": {
+      "score_normal": 0.03289411587515189,
+      "score_injected": 249.73655473530033,
+      "detected": true
+    }
+  },
+  "timing": {
+    "1A": {
+      "avg_ms": 1.0165589998359792,
+      "min_ms": 0.5249000096227974,
+      "max_ms": 33.74250000342727
+    },
+    "1B": {
+      "avg_ms": 0.701544999901671,
+      "min_ms": 0.5584000027738512,
+      "max_ms": 2.760799980023876
+    },
+    "2": {
+      "avg_ms": 2.6495979976607487,
+      "min_ms": 1.783600018825382,
+      "max_ms": 4.058499995153397
+    }
+  },
+  "checks": [
+    {
+      "name": "1A MAE",
+      "actual": 0.791780948638916,
+      "expected": 0.7918,
+      "diff": 1.9051361083932683e-05,
+      "tolerance": 0.001,
+      "status": "MATCH",
+      "unit": "%"
+    },
+    {
+      "name": "1A RMSE",
+      "actual": 1.066307783126831,
+      "expected": 1.0663,
+      "diff": 7.783126831029108e-06,
+      "tolerance": 0.001,
+      "status": "MATCH",
+      "unit": "%"
+    },
+    {
+      "name": "1A R2",
+      "actual": 0.94727502454906,
+      "expected": 0.9473,
+      "diff": 2.4975450940045718e-05,
+      "tolerance": 0.001,
+      "status": "MATCH",
+      "unit": "%"
+    },
+    {
+      "name": "1B MAE",
+      "actual": 0.41106393933296204,
+      "expected": 0.4111,
+      "diff": 3.606066703798483e-05,
+      "tolerance": 0.001,
+      "status": "MATCH",
+      "unit": "%"
+    },
+    {
+      "name": "1B RMSE",
+      "actual": 0.5949144959449768,
+      "expected": 0.5949,
+      "diff": 1.4495944976822273e-05,
+      "tolerance": 0.001,
+      "status": "MATCH",
+      "unit": "%"
+    },
+    {
+      "name": "1B R2",
+      "actual": 0.9746385033529199,
+      "expected": 0.9746,
+      "diff": 3.850335291988305e-05,
+      "tolerance": 0.001,
+      "status": "MATCH",
+      "unit": "%"
+    },
+    {
+      "name": "Model 2 FPR",
+      "actual": 1.3334414136910793,
+      "expected": 1.33,
+      "diff": 0.003441413691079198,
+      "tolerance": 1.0,
+      "status": "MATCH",
+      "unit": "%"
+    },
+    {
+      "name": "Model 2 Detection",
+      "actual": 98.2,
+      "expected": 98.2,
+      "diff": 0.0,
+      "tolerance": 1.0,
+      "status": "MATCH",
+      "unit": "%"
+    },
+    {
+      "name": "3a normal smoke test",
+      "actual": 1.0,
+      "expected": 1.0,
+      "diff": 0.0,
+      "tolerance": 0.0,
+      "status": "MATCH",
+      "unit": " (bool)"
+    },
+    {
+      "name": "3a injection detected",
+      "actual": 1.0,
+      "expected": 1.0,
+      "diff": 0.0,
+      "tolerance": 0.0,
+      "status": "MATCH",
+      "unit": " (bool)"
+    },
+    {
+      "name": "3b normal smoke test",
+      "actual": 1.0,
+      "expected": 1.0,
+      "diff": 0.0,
+      "tolerance": 0.0,
+      "status": "MATCH",
+      "unit": " (bool)"
+    },
+    {
+      "name": "3b injection detected",
+      "actual": 1.0,
+      "expected": 1.0,
+      "diff": 0.0,
+      "tolerance": 0.0,
+      "status": "MATCH",
+      "unit": " (bool)"
+    }
+  ],
+  "n_match": 12,
+  "n_mismatch": 0,
+  "elapsed_seconds": 7.1
+}

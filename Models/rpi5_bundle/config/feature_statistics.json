@@ -1,0 +1,36 @@
+{
+  "feature_means": {
+    "port_motor_power": 20.02011489868164,
+    "stbd_motor_power": 21.58403205871582,
+    "motor_power_combined": 41.60438919067383,
+    "port_rpm": 1224.2650146484375,
+    "stbd_rpm": 1176.1737060546875,
+    "speed_over_ground": 6.191977024078369,
+    "battery_power": 158.9187774658203,
+    "port_stbd_power_ratio": 0.44870805740356445,
+    "port_stbd_power_diff": 3.463862895965576,
+    "port_stbd_rpm_ratio": 0.49279648065567017,
+    "port_stbd_rpm_diff": 68.01336669921875,
+    "port_power_per_rpm": 0.01515500620007515,
+    "stbd_power_per_rpm": 0.01646663434803486,
+    "combined_power_per_speed": 6.86570405960083,
+    "power_speed_squared_ratio": 1.3143166303634644
+  },
+  "feature_stds": {
+    "port_motor_power": 12.251458168029785,
+    "stbd_motor_power": 10.632264137268066,
+    "motor_power_combined": 22.581893920898438,
+    "port_rpm": 387.1661376953125,
+    "stbd_rpm": 352.68609619140625,
+    "speed_over_ground": 2.075028896331787,
+    "battery_power": 7.249952793121338,
+    "port_stbd_power_ratio": 0.1339619904756546,
+    "port_stbd_power_diff": 2.602459669113159,
+    "port_stbd_rpm_ratio": 0.10938877612352371,
+    "port_stbd_rpm_diff": 114.63571166992188,
+    "port_power_per_rpm": 0.17327353358268738,
+    "stbd_power_per_rpm": 0.01,
+    "combined_power_per_speed": 4.18544864654541,
+    "power_speed_squared_ratio": 2.244135856628418
+  }
+}

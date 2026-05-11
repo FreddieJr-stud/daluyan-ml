@@ -1,0 +1,86 @@
+{
+  "model": "soc_realtime_v2",
+  "trained_at": "2026-03-26T18:06:24.543999",
+  "features": [
+    "distance_remaining_km",
+    "trip_progress_fraction",
+    "elapsed_time_s",
+    "direction_encoded",
+    "arrival_station_encoded",
+    "hop_count",
+    "departure_station_encoded",
+    "current_motor_power",
+    "current_battery_power",
+    "avg_speed_60s",
+    "avg_power_60s",
+    "avg_power_30s",
+    "soc_rate_30s",
+    "soc_rate_std_60s",
+    "wind_speed_kn",
+    "wind_component_along_route",
+    "temperature_c",
+    "power_speed_ratio",
+    "rpm_per_speed",
+    "tide_height_m",
+    "hours_since_high_tide",
+    "empirical_power_per_km",
+    "soc_consumed_so_far",
+    "empirical_soc_per_km",
+    "passengers_on_board"
+  ],
+  "target": "soc_remaining_delta",
+  "best_params": {
+    "max_depth": 8,
+    "learning_rate": 0.10011696278045143,
+    "subsample": 0.5429483178453555,
+    "colsample_bytree": 0.9770520620844158,
+    "colsample_bylevel": 0.6601884691438452,
+    "min_child_weight": 25,
+    "reg_alpha": 0.012836794755977503,
+    "reg_lambda": 0.023734675526702442,
+    "gamma": 2.7934972735374375,
+    "n_estimators": 4903
+  },
+  "n_ensemble_seeds": 5,
+  "ensemble_seeds": [
+    42,
+    137,
+    256,
+    512,
+    1024
+  ],
+  "splits": {
+    "train_rows": 49442,
+    "val_rows": 6099,
+    "test_rows": 15641,
+    "train_segments": 691,
+    "val_segments": 124,
+    "test_segments": 268
+  },
+  "metrics": {
+    "Train": {
+      "MAE": 0.16435743868350983,
+      "RMSE": 0.23274092053918183,
+      "R2": 0.9975460171699524,
+      "MAPE": "5.21307"
+    },
+    "Validation": {
+      "MAE": 0.33149102330207825,
+      "RMSE": 0.45836657887596366,
+      "R2": 0.9823418855667114,
+      "MAPE": "10.999699"
+    },
+    "Test": {
+      "MAE": 0.44543924927711487,
+      "RMSE": 0.6319324590666606,
+      "R2": 0.9668346643447876,
+      "MAPE": "11.190515"
+    }
+  },
+  "conformal": {
+    "conformal_q_hat_80": 0.550548255443573,
+    "alpha": 0.2,
+    "val_n": 6099,
+    "test_coverage": 0.8152292052937792
+  }
+}

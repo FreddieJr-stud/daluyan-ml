@@ -1,0 +1,90 @@
+{
+  "model": "anomaly_reconstruction_v2",
+  "trained_at": "2026-03-26T18:14:59.964481",
+  "features": [
+    "port_motor_power",
+    "stbd_motor_power",
+    "motor_power_combined",
+    "port_rpm",
+    "stbd_rpm",
+    "speed_over_ground",
+    "battery_power",
+    "port_stbd_power_ratio",
+    "port_stbd_power_diff",
+    "port_stbd_rpm_ratio",
+    "port_stbd_rpm_diff",
+    "port_power_per_rpm",
+    "stbd_power_per_rpm",
+    "combined_power_per_speed",
+    "power_speed_squared_ratio"
+  ],
+  "targets": [
+    "port_motor_power",
+    "stbd_motor_power",
+    "port_rpm",
+    "stbd_rpm"
+  ],
+  "thresholds": {
+    "p95": 0.0030489633484052092,
+    "p97": 0.0047096549264935405,
+    "p99": 0.013944505240098722
+  },
+  "per_target_best_params": {
+    "port_motor_power": {
+      "max_depth": 7,
+      "learning_rate": 0.26635905276296984,
+      "subsample": 0.7679860326345969,
+      "colsample_bytree": 0.9241789175304523,
+      "min_child_weight": 2,
+      "reg_alpha": 0.0001621613449176346,
+      "reg_lambda": 4.18951758295007,
+      "gamma": 0.0005824192997685093,
+      "n_estimators": 515
+    },
+    "stbd_motor_power": {
+      "max_depth": 7,
+      "learning_rate": 0.2895792005911395,
+      "subsample": 0.8922293837437448,
+      "colsample_bytree": 0.9334442899278267,
+      "min_child_weight": 8,
+      "reg_alpha": 0.011294081891978053,
+      "reg_lambda": 0.00011097215521200447,
+      "gamma": 0.0009947990916819166,
+      "n_estimators": 689
+    },
+    "port_rpm": {
+      "max_depth": 6,
+      "learning_rate": 0.08870887467032595,
+      "subsample": 0.9360604118888122,
+      "colsample_bytree": 0.8284360146021472,
+      "min_child_weight": 1,
+      "reg_alpha": 0.0003623271249145362,
+      "reg_lambda": 0.8060387395376412,
+      "gamma": 3.720889347437848,
+      "n_estimators": 1462
+    },
+    "stbd_rpm": {
+      "max_depth": 6,
+      "learning_rate": 0.08662939210979319,
+      "subsample": 0.9197696347413636,
+      "colsample_bytree": 0.8199488839212322,
+      "min_child_weight": 1,
+      "reg_alpha": 0.0005024207422383976,
+      "reg_lambda": 0.5499405371260576,
+      "gamma": 3.872063762964572,
+      "n_estimators": 1278
+    }
+  },
+  "injection_test": {
+    "detection_rate": 96.39999999999999,
+    "false_positive_rate": 0.5772083614295347,
+    "threshold": 0.013944505240098722,
+    "n_injections": 500,
+    "corruption_factor": 1.5
+  },
+  "splits": {
+    "train": 109994,
+    "val": 9991,
+    "test": 12032
+  }
+}

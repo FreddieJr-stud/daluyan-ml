@@ -1,0 +1,57 @@
+{
+  "model": "soc_trip_per_direction_v4",
+  "trained_at": "2026-02-23T19:26:52.171567",
+  "features": [
+    "departure_station_encoded",
+    "arrival_station_encoded",
+    "hop_count",
+    "route_distance_km",
+    "start_soc",
+    "start_hv_capacity",
+    "target_speed",
+    "target_speed_squared",
+    "passengers_on_board",
+    "passenger_load_ratio",
+    "temperature_c",
+    "relative_humidity",
+    "wind_speed_kn",
+    "wind_direction_deg",
+    "wind_component_along_route",
+    "precipitation_mm",
+    "wave_height_m",
+    "hour_of_day",
+    "is_peak_hour",
+    "speed_distance_interaction",
+    "energy_rate_proxy",
+    "wind_cross_component",
+    "soc_per_km_capacity",
+    "tide_height_m",
+    "hours_since_high_tide",
+    "tide_phase",
+    "trip_number_today",
+    "cumulative_energy_today_kwh",
+    "minutes_since_last_trip"
+  ],
+  "target": "soc_delta",
+  "n_ensemble_seeds": 5,
+  "per_direction_metrics": {
+    "downstream": {
+      "MAE": 0.8529394865036011,
+      "RMSE": 1.1443089604555055,
+      "R2": 0.9181541204452515,
+      "MAPE": "21.437832"
+    },
+    "upstream": {
+      "MAE": 1.1118981838226318,
+      "RMSE": 1.509645760775873,
+      "R2": 0.8977277278900146,
+      "MAPE": "19.456264"
+    }
+  },
+  "combined_test_metrics": {
+    "MAE": 1.0033026529896645,
+    "RMSE": 1.368367326971163,
+    "R2": 0.926523619807302,
+    "MAPE": 20.24889228816412
+  }
+}

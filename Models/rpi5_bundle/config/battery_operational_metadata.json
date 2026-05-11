@@ -1,0 +1,66 @@
+{
+  "model": "battery_anomaly_operational",
+  "trained_at": "2026-03-20T18:40:54.112916",
+  "features": [
+    "port_cell_v_spread",
+    "stbd_cell_v_spread",
+    "port_cell_t_max",
+    "stbd_cell_t_max",
+    "port_cell_t_min",
+    "stbd_cell_t_min",
+    "port_pack_voltage",
+    "stbd_pack_voltage",
+    "port_pack_current",
+    "stbd_pack_current",
+    "port_soc",
+    "stbd_soc",
+    "port_power",
+    "stbd_power",
+    "port_avg_temperature",
+    "stbd_avg_temperature",
+    "port_cell_t_spread",
+    "stbd_cell_t_spread",
+    "cell_v_spread_combined",
+    "cell_t_spread_combined",
+    "port_stbd_soc_diff",
+    "port_stbd_v_diff",
+    "port_stbd_power_diff"
+  ],
+  "targets": [
+    "port_cell_v_spread",
+    "stbd_cell_v_spread",
+    "port_cell_t_spread",
+    "stbd_cell_t_spread"
+  ],
+  "thresholds": {
+    "p95": 11.779764080652967,
+    "p97": 14.130475544836372,
+    "p99": 15.6427536597771
+  },
+  "optuna_trials_per_target": 100,
+  "injection_test": {
+    "detection_rate": 100.0,
+    "false_positive_rate": 1.6637002341920375,
+    "threshold": 15.6427536597771,
+    "n_injections": 500,
+    "injection_type": "multi-feature cell degradation + thermal hotspot",
+    "injected_features": [
+      "port_cell_v_spread",
+      "stbd_cell_v_spread",
+      "cell_v_spread_combined",
+      "port_cell_t_spread",
+      "cell_t_spread_combined"
+    ]
+  },
+  "splits": {
+    "train": 96802,
+    "val": 14976,
+    "test": 53375
+  },
+  "test_scores": {
+    "mean": 0.8467194172075744,
+    "std": 3.8298664773182893,
+    "max": 103.89296275004745,
+    "flagged_p99": 888
+  }
+}
