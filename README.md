@@ -31,6 +31,33 @@ Production ML pipeline for the **M/B Dalaray** electric ferry on the Pasig River
 - **Edge deploy:** Raspberry Pi 5 (ARM64) — 73 MB bundle, see `Models/rpi5_bundle/`
 - **Testing:** pytest
 
+## Pipeline
+
+```mermaid
+flowchart LR
+    subgraph Sources["Real production data"]
+        Segs["Clean trip segments<br/>(daluyan-backend)"]
+        NASA["NASA POWER<br/>weather API"]
+        Tide["Tide gauge data"]
+    end
+
+    Segs --> FE["Feature engineering<br/>segmentation-aware"]
+    NASA --> FE
+    Tide --> Harmonic["Tide harmonic<br/>model fit"]
+    Harmonic --> FE
+
+    FE --> Optuna["Optuna TPE<br/>500-trial search"]
+    Optuna --> Train["5-seed ensemble<br/>training × 5 models"]
+    Train --> SHAP["SHAP attribution +<br/>monotonic constraints"]
+    SHAP --> Conformal["Conformal wrappers<br/>(q10/q90 intervals)"]
+
+    Conformal --> Bundle["RPi5 ARM64 bundle<br/>73 MB, self-contained"]
+    Bundle --> Edge["Edge inference<br/>on the vessel"]
+    Bundle -.->|documented<br/>fp divergence| Divergence["ARM64 vs x86_64<br/>experiment"]
+
+    Edge --> Dashboard["daluyan-dashboard<br/>predict_interval() calls"]
+```
+
 ## Layout
 
 ```
