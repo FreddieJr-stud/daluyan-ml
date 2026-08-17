@@ -1,0 +1,23 @@
+# Large binary model files (too large for git)
+artifacts/*.joblib
+artifacts/rf_anomaly_*.joblib
+artifacts/if_anomaly_model.joblib
+
+# Data directories (large: 58MB+ exports, 21GB raw data)
+artifacts/exported_splits/
+artifacts/feature_store/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Environment
+.env
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
